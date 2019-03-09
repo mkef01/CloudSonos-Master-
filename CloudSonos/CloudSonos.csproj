@@ -91,15 +91,22 @@
   <ItemGroup>
     <Content Include="ASSETS PRESENTATION\css\agency.css" />
     <Content Include="ASSETS PRESENTATION\css\agency.min.css" />
-    <Content Include="ASSETS PRESENTATION\img\about\1.jpg" />
-    <Content Include="ASSETS PRESENTATION\img\about\2.jpg" />
-    <Content Include="ASSETS PRESENTATION\img\about\3.jpg" />
-    <Content Include="ASSETS PRESENTATION\img\about\4.jpg" />
+    <Content Include="ASSETS PRESENTATION\img\689419.jpg" />
+    <Content Include="ASSETS PRESENTATION\img\about\artists-audience-band-1763075.jpg" />
+    <Content Include="ASSETS PRESENTATION\img\about\brainstorming-collaborate-collaboration-1204649.jpg" />
+    <Content Include="ASSETS PRESENTATION\img\about\camera-contemporary-flash-134469.jpg" />
+    <Content Include="ASSETS PRESENTATION\img\about\Easy_Life.jpg" />
+    <Content Include="ASSETS PRESENTATION\img\ac_dc_high_voltage-wallpaper-1366x768.jpg" />
+    <Content Include="ASSETS PRESENTATION\img\artists-audience-band-1763075.jpg" />
+    <Content Include="ASSETS PRESENTATION\img\beatles-1.jpg" />
+    <Content Include="ASSETS PRESENTATION\img\camera-contemporary-flash-134469.jpg" />
+    <Content Include="ASSETS PRESENTATION\img\Easy_Life.jpg" />
     <Content Include="ASSETS PRESENTATION\img\logos\creative-market.jpg" />
     <Content Include="ASSETS PRESENTATION\img\logos\designmodo.jpg" />
     <Content Include="ASSETS PRESENTATION\img\logos\envato.jpg" />
     <Content Include="ASSETS PRESENTATION\img\logos\themeforest.jpg" />
     <Content Include="ASSETS PRESENTATION\img\map-image.png" />
+    <Content Include="ASSETS PRESENTATION\img\maxresdefault.jpg" />
     <Content Include="ASSETS PRESENTATION\img\pexels-photo-1649771.jpeg" />
     <Content Include="ASSETS PRESENTATION\img\portfolio\01-full.jpg" />
     <Content Include="ASSETS PRESENTATION\img\portfolio\01-thumbnail.jpg" />
@@ -116,6 +123,7 @@
     <Content Include="ASSETS PRESENTATION\img\team\1.jpg" />
     <Content Include="ASSETS PRESENTATION\img\team\2.jpg" />
     <Content Include="ASSETS PRESENTATION\img\team\3.jpg" />
+    <Content Include="ASSETS PRESENTATION\img\toto-old-copy.jpg" />
     <Content Include="ASSETS PRESENTATION\img\Untitled design.png" />
     <Content Include="ASSETS PRESENTATION\js\agency.js" />
     <Content Include="ASSETS PRESENTATION\js\agency.min.js" />
