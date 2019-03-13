@@ -1,7 +1,109 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    Layout = null;
 }
 
-<h2>Index</h2>
+<!DOCTYPE html>
 
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Login - CloudSonos</title>
+	<link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="~/Login Assets/css/style.css"/>
+</head>
+<body style="background: black">
+    
+	<div class="container">
+		<div class="col-md-6 col-md-offset-3 col-xs-12">
+			
+			<div class="blmd-wrapp">
+				<div class="blmd-color-conatiner ripple-effect-All"></div>
+				<div class="blmd-header-wrapp ">
+					<div class="blmd-switches">
+						<button class="btn btn-circle btn-lg btn-blmd ripple-effect btn-success blmd-switch-button">
+							<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+								<path fill="#fff" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+							</svg>
+						</button>
+					</div>
+
+				</div>
+				<div class="blmd-continer">
+
+					<form action="@Url.Action("Index","Login")" class="clearfix" id="login-form" method="post">
+						<h1>Bienvenidos</h1>
+						<div class="col-md-12">
+
+							<div class="input-group blmd-form">
+								<div class="blmd-line">
+									<input type="text" name="Usuario" autocomplete="off" id="Usuario" class="form-control">
+									<label class="blmd-label">Nombre de usuario</label>
+								</div>
+							</div>
+							<div class="input-group blmd-form">
+								<div class="blmd-line">
+									<input type="password" name="Contraseña" autocomplete="off" id="Contraseña" class="form-control">
+									<label class="blmd-label">Password</label>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 text-center">
+							<button type="submit" class="btn btn-blmd ripple-effect btn-success btn-lg btn-block">Entrar</button>
+						</div>
+						<br />
+
+					</form>
+					
+						<form action="post" class="clearfix form-hidden" id="Register-form">
+							<h1>Pagina de Registro</h1>
+							<div class="col-md-12">
+
+								<div class="input-group blmd-form">
+									<div class="blmd-line">
+										<input type="text" name="username" autocomplete="off" id="nuevousuario" class="form-control">
+										<label class="blmd-label">Nombre de usuario</label>
+									</div>
+								</div>
+								<div class="input-group blmd-form">
+									<div class="blmd-line">
+										<input type="password" name="password" autocomplete="off" id="password1" class="form-control">
+										<label class="blmd-label">Contraeña</label>
+									</div>
+								</div>
+								<div class="input-group blmd-form">
+									<div class="blmd-line">
+										<input type="password" name="rePassword" autocomplete="off" id="password2" class="form-control">
+										<label class="blmd-label">Repetir Contraseña</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 text-center">
+								<button type="button" class="btn btn-blmd ripple-effect btn-warning btn-lg btn-block">Siguiente</button>
+							</div>
+							<br />
+						</form>
+</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="~/Login Assets/js/index.js"></script>
+@if(ViewBag.Message != null)
+{
+	<script>
+
+		$(document).ready(function(){
+
+			alert('@ViewBag.Message');
+
+		});
+
+	</script>
+
+}
+</body>
+</html>
