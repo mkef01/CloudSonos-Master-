@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CLOUDSONOS" Class="NubeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=mkef01.database.windows.net;Initial Catalog=CLOUDSONOS;Persist Security Info=True;User ID=mkef01" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CLOUDSONOSConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.album" Member="album">
+    <Type Name="album">
+      <Column Name="ID_Album" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(65)" CanBeNull="true" />
+      <Column Name="año" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="Imagen" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Duracion" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ID_Genero" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="album_albumfav" Member="albumfav" ThisKey="ID_Album" OtherKey="ID_Album" Type="albumfav" />
+      <Association Name="album_artistabanda" Member="artistabanda" ThisKey="ID_Album" OtherKey="ID_Album" Type="artistabanda" />
+      <Association Name="album_cancionalbum" Member="cancionalbum" ThisKey="ID_Album" OtherKey="ID_Album" Type="cancionalbum" />
+      <Association Name="generos_album" Member="generos" ThisKey="ID_Genero" OtherKey="ID_Genero" Type="generos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.albumfav" Member="albumfav">
+    <Type Name="albumfav">
+      <Column Name="ID_Favoritos" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Usuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_Album" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="album_albumfav" Member="album" ThisKey="ID_Album" OtherKey="ID_Album" Type="album" IsForeignKey="true" />
+      <Association Name="usuario_albumfav" Member="usuario" ThisKey="ID_Usuario" OtherKey="ID_Usuario" Type="usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.artistabanda" Member="artistabanda">
+    <Type Name="artistabanda">
+      <Column Name="ID_Artista" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(65)" CanBeNull="true" />
+      <Column Name="imagen" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ID_Album" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="artistabanda_integrabanda" Member="integrabanda" ThisKey="ID_Artista" OtherKey="ID_Artista" Type="integrabanda" />
+      <Association Name="album_artistabanda" Member="album" ThisKey="ID_Album" OtherKey="ID_Album" Type="album" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cancionalbum" Member="cancionalbum">
+    <Type Name="cancionalbum">
+      <Column Name="ID_CancionAlbum" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Cancion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_Album" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="album_cancionalbum" Member="album" ThisKey="ID_Album" OtherKey="ID_Album" Type="album" IsForeignKey="true" />
+      <Association Name="canciones_cancionalbum" Member="canciones" ThisKey="ID_Cancion" OtherKey="ID_Cancion" Type="canciones" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.canciones" Member="canciones">
+    <Type Name="canciones">
+      <Column Name="ID_Cancion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="URL" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Association Name="canciones_cancionalbum" Member="cancionalbum" ThisKey="ID_Cancion" OtherKey="ID_Cancion" Type="cancionalbum" />
+      <Association Name="canciones_playlistcancion" Member="playlistcancion" ThisKey="ID_Cancion" OtherKey="ID_Cancion" Type="playlistcancion" />
+    </Type>
+  </Table>
+  <Table Name="dbo.generos" Member="generos">
+    <Type Name="generos">
+      <Column Name="ID_Genero" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GeneroNombre" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Association Name="generos_album" Member="album" ThisKey="ID_Genero" OtherKey="ID_Genero" Type="album" />
+    </Type>
+  </Table>
+  <Table Name="dbo.integrabanda" Member="integrabanda">
+    <Type Name="integrabanda">
+      <Column Name="ID_integrabanda" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Persona" Type="System.String" DbType="VarChar(65)" CanBeNull="true" />
+      <Column Name="ID_Artista" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="artistabanda_integrabanda" Member="artistabanda" ThisKey="ID_Artista" OtherKey="ID_Artista" Type="artistabanda" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.playlist" Member="playlist">
+    <Type Name="playlist">
+      <Column Name="ID_Playlist" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(65)" CanBeNull="true" />
+      <Column Name="ID_Usuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="playlist_playlistcancion" Member="playlistcancion" ThisKey="ID_Playlist" OtherKey="ID_Playlist" Type="playlistcancion" />
+      <Association Name="usuario_playlist" Member="usuario" ThisKey="ID_Usuario" OtherKey="ID_Usuario" Type="usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.playlistcancion" Member="playlistcancion">
+    <Type Name="playlistcancion">
+      <Column Name="ID_PlayCan" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Playlist" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_Cancion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="canciones_playlistcancion" Member="canciones" ThisKey="ID_Cancion" OtherKey="ID_Cancion" Type="canciones" IsForeignKey="true" />
+      <Association Name="playlist_playlistcancion" Member="playlist" ThisKey="ID_Playlist" OtherKey="ID_Playlist" Type="playlist" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sysdiagrams" Member="sysdiagrams">
+    <Type Name="sysdiagrams">
+      <Column Name="name" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="principal_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="diagram_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="version" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="definition" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.usuario" Member="usuario">
+    <Type Name="usuario">
+      <Column Name="ID_Usuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Contraseña" Type="System.String" DbType="VarChar(55)" CanBeNull="true" />
+      <Column Name="Correo" Type="System.String" DbType="VarChar(55)" CanBeNull="true" />
+      <Column Name="Usuario" Member="Usuario1" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Association Name="usuario_albumfav" Member="albumfav" ThisKey="ID_Usuario" OtherKey="ID_Usuario" Type="albumfav" />
+      <Association Name="usuario_playlist" Member="playlist" ThisKey="ID_Usuario" OtherKey="ID_Usuario" Type="playlist" />
+    </Type>
+  </Table>
+</Database>

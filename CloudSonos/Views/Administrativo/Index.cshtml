@@ -1,0 +1,19 @@
+﻿@model CloudSonos.Models.generos
+@{
+    ViewBag.Title = "Generos";
+    Layout = "~/Views/Shared/_Bootstrap.cshtml";
+}
+
+@using (Html.BeginForm("Index", "Administrativo", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <form>
+        <div class="form-group">
+            Nombre Genero:
+            <p></p>
+            @Html.TextBoxFor(model => model.GeneroNombre, new { @class = "form-control"})
+        </div>
+        <button type="submit" class="btn btn-outline-primary" value="submit">Agregar Genero</button>
+    </form>
+}
+
