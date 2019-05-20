@@ -83,15 +83,15 @@ namespace CloudSonos.Controllers
         }
 
         [EnableCors("*", "*", "*")]
-        [HttpGet]
+        [HttpPost]
         [Route("api/reproductor/album")]
-        public List<apiAlbum> Album(String album, String artista)
+        public List<apiAlbum> Album([FromBody] Pedido1 pedidito)
         {
             List<apiAlbum> detalleAlbum = new List<apiAlbum>();
             var query = from alb in _context.album
                         join g in _context.generos on alb.ID_Genero equals g.ID_Genero
                         join art in _context.artistabanda on alb.ID_Album equals art.ID_Album
-                        where art.Nombre == artista && alb.nombre == album
+                        where art.Nombre == pedidito.artista && alb.nombre == pedidito.album
                         select new
                         {
                             imgAlbum = alb.Imagen,
@@ -119,16 +119,16 @@ namespace CloudSonos.Controllers
         }
 
         [EnableCors("*", "*", "*")]
-        [HttpGet]
+        [HttpPost]
         [Route("api/reproductor/playlist")]
-        public List<apiPlaylist> Playlist(String album, String artista)
+        public List<apiPlaylist> Playlist([FromBody] Pedido1 pedidito)
         {
             List<apiPlaylist> detallePlaylist = new List<apiPlaylist>();
             var query = from alb in _context.album
                         join c in _context.cancionalbum on alb.ID_Album equals c.ID_Album
                         join can in _context.canciones on c.ID_Cancion equals can.ID_Cancion
                         join art in _context.artistabanda on alb.ID_Album equals art.ID_Album
-                        where alb.nombre == album && art.Nombre == artista
+                        where alb.nombre == pedidito.album && art.Nombre == pedidito.artista
                         select new
                         {
                             nombre = can.Nombre,

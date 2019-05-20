@@ -1812,6 +1812,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Nube.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Pedido1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
