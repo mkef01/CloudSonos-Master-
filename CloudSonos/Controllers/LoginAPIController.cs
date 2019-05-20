@@ -12,6 +12,13 @@ namespace CloudSonos.Controllers
 {
     public class LoginAPIController : ApiController
     {
+        private readonly NubeDataContext _context;
+
+        public LoginAPIController()
+        {
+            _context = new NubeDataContext();
+        }
+
 		[EnableCors("*","*","*")]
 		[HttpPost]
 	    [Route("api/login/acceso")]
@@ -73,6 +80,70 @@ namespace CloudSonos.Controllers
             s.url = "https://s3-us-west-2.amazonaws.com/allmetalmixtapes/Saxon%20-%201984%20-%20Crusader/01%20-%20Crusader%20Prelude.mp3";
             datos.Add(s);
             return datos;
+        }
+
+        [EnableCors("*", "*", "*")]
+        [HttpGet]
+        [Route("api/reproductor/album")]
+        public List<apiAlbum> Album(String album, String artista)
+        {
+            List<apiAlbum> detalleAlbum = new List<apiAlbum>();
+            var query = from alb in _context.album
+                        join g in _context.generos on alb.ID_Genero equals g.ID_Genero
+                        join art in _context.artistabanda on alb.ID_Album equals art.ID_Album
+                        where art.Nombre == artista && alb.nombre == album
+                        select new
+                        {
+                            imgAlbum = alb.Imagen,
+                            genNombre = g.GeneroNombre,
+                            year = alb.año,
+                            descrip = alb.Descripcion,
+                            imgBanda = art.imagen,
+                            albNombre = alb.nombre,
+                            discografia = alb.Discografica
+                        };
+            var detalles = query.ToList();
+            foreach (var detalleData in detalles)
+            {
+                detalleAlbum.Add(new apiAlbum()
+                {
+                    UrlBanda = detalleData.imgBanda,
+                    UrlAlbum = detalleData.imgAlbum,
+                    Genero = detalleData.genNombre,
+                    Año = detalleData.year,
+                    Discografia = detalleData.discografia,
+                    Descripcion = detalleData.descrip
+                });
+            }
+            return detalleAlbum;
+        }
+
+        [EnableCors("*", "*", "*")]
+        [HttpGet]
+        [Route("api/reproductor/playlist")]
+        public List<apiPlaylist> Playlist(String album, String artista)
+        {
+            List<apiPlaylist> detallePlaylist = new List<apiPlaylist>();
+            var query = from alb in _context.album
+                        join c in _context.cancionalbum on alb.ID_Album equals c.ID_Album
+                        join can in _context.canciones on c.ID_Cancion equals can.ID_Cancion
+                        join art in _context.artistabanda on alb.ID_Album equals art.ID_Album
+                        where alb.nombre == album && art.Nombre == artista
+                        select new
+                        {
+                            nombre = can.Nombre,
+                            link = can.URL
+                        };
+            var detalles = query.ToList();
+            foreach (var detalleData in detalles)
+            {
+                detallePlaylist.Add(new apiPlaylist()
+                {
+                    Nombre = detalleData.nombre,
+                    URL = detalleData.link
+                });
+            }
+            return detallePlaylist;
         }
     }
 }

@@ -204,6 +204,8 @@ namespace CloudSonos.Models
 		
 		private System.Nullable<int> _ID_Genero;
 		
+		private string _Discografica;
+		
 		private EntitySet<albumfav> _albumfav;
 		
 		private EntitySet<artistabanda> _artistabanda;
@@ -230,6 +232,8 @@ namespace CloudSonos.Models
     partial void OnDuracionChanged();
     partial void OnID_GeneroChanging(System.Nullable<int> value);
     partial void OnID_GeneroChanged();
+    partial void OnDiscograficaChanging(string value);
+    partial void OnDiscograficaChanged();
     #endregion
 		
 		public album()
@@ -301,7 +305,7 @@ namespace CloudSonos.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Imagen", DbType="VarChar(120)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Imagen", DbType="VarChar(255)")]
 		public string Imagen
 		{
 			get
@@ -321,7 +325,7 @@ namespace CloudSonos.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(255)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(500)")]
 		public string Descripcion
 		{
 			get
@@ -381,6 +385,26 @@ namespace CloudSonos.Models
 					this._ID_Genero = value;
 					this.SendPropertyChanged("ID_Genero");
 					this.OnID_GeneroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Discografica", DbType="VarChar(125)")]
+		public string Discografica
+		{
+			get
+			{
+				return this._Discografica;
+			}
+			set
+			{
+				if ((this._Discografica != value))
+				{
+					this.OnDiscograficaChanging(value);
+					this.SendPropertyChanging();
+					this._Discografica = value;
+					this.SendPropertyChanged("Discografica");
+					this.OnDiscograficaChanged();
 				}
 			}
 		}
@@ -786,7 +810,7 @@ namespace CloudSonos.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imagen", DbType="VarChar(150)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imagen", DbType="VarChar(255)")]
 		public string imagen
 		{
 			get

@@ -5,10 +5,11 @@
       <Column Name="ID_Album" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="nombre" Type="System.String" DbType="VarChar(65)" CanBeNull="true" />
       <Column Name="año" Type="System.String" DbType="Char(4)" CanBeNull="true" />
-      <Column Name="Imagen" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Imagen" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
       <Column Name="Duracion" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
       <Column Name="ID_Genero" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Discografica" Type="System.String" DbType="VarChar(125)" CanBeNull="true" />
       <Association Name="album_albumfav" Member="albumfav" ThisKey="ID_Album" OtherKey="ID_Album" Type="albumfav" />
       <Association Name="album_artistabanda" Member="artistabanda" ThisKey="ID_Album" OtherKey="ID_Album" Type="artistabanda" />
       <Association Name="album_cancionalbum" Member="cancionalbum" ThisKey="ID_Album" OtherKey="ID_Album" Type="cancionalbum" />
@@ -28,7 +29,7 @@
     <Type Name="artistabanda">
       <Column Name="ID_Artista" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Nombre" Type="System.String" DbType="VarChar(65)" CanBeNull="true" />
-      <Column Name="imagen" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="imagen" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="ID_Album" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="artistabanda_integrabanda" Member="integrabanda" ThisKey="ID_Artista" OtherKey="ID_Artista" Type="integrabanda" />
       <Association Name="album_artistabanda" Member="album" ThisKey="ID_Album" OtherKey="ID_Album" Type="album" IsForeignKey="true" />

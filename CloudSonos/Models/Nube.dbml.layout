@@ -1,141 +1,141 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 15.375, 9.375" name="Nube">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.375, 12.5" name="Nube">
   <DataContextMoniker Name="/NubeDataContext" />
   <nestedChildShapes>
-    <classShape Id="0fd69b42-9675-42cd-ad64-373a088947e1" absoluteBounds="3.625, 2.25, 2, 2.1554996744791666">
+    <classShape Id="d0b72769-5d06-44d1-9f9e-6f8dd640577e" absoluteBounds="3.5, 3.5, 2, 2.3478011067708344">
       <DataClassMoniker Name="/NubeDataContext/album" />
       <nestedChildShapes>
-        <elementListCompartment Id="789d7d70-5db0-4d10-8b95-2dacd5bef16b" absoluteBounds="3.64, 2.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="75ff0050-cfd2-4b2f-a295-3fc312c5e2da" absoluteBounds="3.515, 3.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2ba80f46-0cd9-48e5-8290-3fe67d98cad0" absoluteBounds="6.75, 2.625, 2, 1.3862939453125005">
+    <classShape Id="69526897-01ac-478e-b848-dfdea482d5cc" absoluteBounds="6.25, 3.875, 2, 1.3862939453125005">
       <DataClassMoniker Name="/NubeDataContext/albumfav" />
       <nestedChildShapes>
-        <elementListCompartment Id="8b06230f-5a68-4f71-9024-f7defcc9602e" absoluteBounds="6.765, 3.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4548fe8d-c5ae-4d3c-bb72-95a1df874196" absoluteBounds="6.265, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ce8fee3d-c48b-4a84-bd76-73cded0dd9e2" absoluteBounds="3.375, 6, 2, 1.5785953776041666">
+    <classShape Id="3b2b4614-7574-43b7-a745-8d596c382e0e" absoluteBounds="6.25, 8.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/NubeDataContext/artistabanda" />
       <nestedChildShapes>
-        <elementListCompartment Id="8da6af0a-d2b3-4740-ac5a-c82b7308e703" absoluteBounds="3.3899999999999997, 6.4600000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="52aff4dc-0e6f-4ba0-a826-1f4dd7d23f8f" absoluteBounds="6.265, 8.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2012125a-8043-4cdf-a0be-8a8a9e1e622c" absoluteBounds="6.25, 0.875, 2, 1.3862939453125">
+    <classShape Id="f58179e4-d3c8-4fcd-a3eb-9f2af24c2155" absoluteBounds="6.25, 0.875, 2, 1.3862939453125">
       <DataClassMoniker Name="/NubeDataContext/cancionalbum" />
       <nestedChildShapes>
-        <elementListCompartment Id="bb4f76ba-8f8d-40d3-908b-80fa902a2d3e" absoluteBounds="6.265, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1c44de4e-c8dd-474d-a9d1-fb00e244c0c8" absoluteBounds="6.265, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a0b288eb-23f5-4e24-b3e1-8062ff5e4a41" absoluteBounds="13.125, 0.875, 2, 1.3862939453125">
+    <classShape Id="8d6bf962-e463-4aa1-a3c9-357a16290516" absoluteBounds="3.5, 0.75, 2, 1.3862939453125">
       <DataClassMoniker Name="/NubeDataContext/canciones" />
       <nestedChildShapes>
-        <elementListCompartment Id="1814cacc-135d-4890-8b23-9c050319e9e2" absoluteBounds="13.14, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6191e499-5108-44c9-8ceb-1a29a00563a5" absoluteBounds="3.515, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="8f2ef765-96ff-473c-a04b-704c29b2bad5" absoluteBounds="0.75, 4, 2, 1.1939925130208344">
+    <classShape Id="b43e1803-9884-4d08-88cd-8ecf78c4fbad" absoluteBounds="0.75, 4, 2, 1.1939925130208344">
       <DataClassMoniker Name="/NubeDataContext/generos" />
       <nestedChildShapes>
-        <elementListCompartment Id="3adf28a7-4baa-4296-b4b1-6fb529cf0489" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="002f9be9-d04e-4480-bbbf-ea16ac4ce403" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="856f9161-7e08-4f2d-bfcb-afa2f50036a9" absoluteBounds="8.75, 4.75, 2, 1.3862939453124987">
+    <classShape Id="24d399fa-624f-480b-8088-c58d6f62be45" absoluteBounds="9, 8.25, 2, 1.3862939453124987">
       <DataClassMoniker Name="/NubeDataContext/integrabanda" />
       <nestedChildShapes>
-        <elementListCompartment Id="4513677d-a67d-410a-8530-20cff76454c8" absoluteBounds="8.765, 5.2100000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c22ee37f-2c00-41fa-9b58-bcb705ca57c9" absoluteBounds="9.015, 8.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2cf42076-43a8-4f87-8878-b268993a9291" absoluteBounds="6.75, 7.75, 2, 1.3862939453124987">
+    <classShape Id="2da169cd-40c5-40cb-b391-d4faf76c24b2" absoluteBounds="6.25, 10.875, 2, 1.3862939453124987">
       <DataClassMoniker Name="/NubeDataContext/playlist" />
       <nestedChildShapes>
-        <elementListCompartment Id="5fcc7214-8339-4a29-a4d9-718d3c9fcf28" absoluteBounds="6.765, 8.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="098604de-e322-47fd-9c05-7b9c8a53ec82" absoluteBounds="6.265, 11.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a4d17586-80b3-424a-b0cf-f77b4740eb3c" absoluteBounds="10, 2.625, 2, 1.3862939453125005">
+    <classShape Id="4dd58a74-5417-4811-b992-1fc9d14a5d74" absoluteBounds="9, 5.875, 2, 1.3862939453125005">
       <DataClassMoniker Name="/NubeDataContext/playlistcancion" />
       <nestedChildShapes>
-        <elementListCompartment Id="7f7e936c-b4b6-4a0d-b41e-e964c7b826a5" absoluteBounds="10.015, 3.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b1bad9fd-cc31-4def-960e-3761607c5fbe" absoluteBounds="9.015, 6.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="09e5bc6c-6b4a-4b40-81f4-a8ec392618f0" absoluteBounds="0.75, 0.875, 2, 1.7708968098958331">
+    <classShape Id="e8377320-87c4-43be-86de-cdfa0da4bfb3" absoluteBounds="8.75, 1.375, 2, 1.7708968098958331">
       <DataClassMoniker Name="/NubeDataContext/sysdiagrams" />
       <nestedChildShapes>
-        <elementListCompartment Id="7cad42e0-f01d-4d1c-a457-e23012f43a1c" absoluteBounds="0.76500000000000057, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5080e95a-5e90-45e0-8867-1eb9ce713167" absoluteBounds="8.765, 1.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="3dd5004b-7601-4235-8047-24e7f66d163a" absoluteBounds="6, 4.875, 2, 1.5785953776041657">
+    <classShape Id="38404ffe-1303-48c1-a535-b1ee231445c7" absoluteBounds="3.5, 6.875, 2, 1.5785953776041657">
       <DataClassMoniker Name="/NubeDataContext/usuario" />
       <nestedChildShapes>
-        <elementListCompartment Id="e2e875cb-a999-4149-8180-70e454441f56" absoluteBounds="6.0150000000000006, 5.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3bff604a-ee93-47b1-91b6-d8f58f9cbcc9" absoluteBounds="3.515, 7.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.625 : 3.31814697265625); (6.75 : 3.31814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 4.56814697265625); (6.25 : 4.56814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/NubeDataContext/album/album_albumfav" />
       <nodes>
-        <classShapeMoniker Id="0fd69b42-9675-42cd-ad64-373a088947e1" />
-        <classShapeMoniker Id="2ba80f46-0cd9-48e5-8290-3fe67d98cad0" />
+        <classShapeMoniker Id="d0b72769-5d06-44d1-9f9e-6f8dd640577e" />
+        <classShapeMoniker Id="69526897-01ac-478e-b848-dfdea482d5cc" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.5 : 4.40549967447917); (4.5 : 6)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 5.84780110677083); (5.875 : 6.22280110677083); (5.875 : 8.91429768880208); (6.25 : 8.91429768880208)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/NubeDataContext/album/album_artistabanda" />
       <nodes>
-        <classShapeMoniker Id="0fd69b42-9675-42cd-ad64-373a088947e1" />
-        <classShapeMoniker Id="ce8fee3d-c48b-4a84-bd76-73cded0dd9e2" />
+        <classShapeMoniker Id="d0b72769-5d06-44d1-9f9e-6f8dd640577e" />
+        <classShapeMoniker Id="3b2b4614-7574-43b7-a745-8d596c382e0e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.625 : 2.25); (4.625 : 1.56814697265625); (6.25 : 1.56814697265625)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 3.5); (5.875 : 3.125); (5.875 : 1.56814697265625); (6.25 : 1.56814697265625)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/NubeDataContext/album/album_cancionalbum" />
       <nodes>
-        <classShapeMoniker Id="0fd69b42-9675-42cd-ad64-373a088947e1" />
-        <classShapeMoniker Id="2012125a-8043-4cdf-a0be-8a8a9e1e622c" />
+        <classShapeMoniker Id="d0b72769-5d06-44d1-9f9e-6f8dd640577e" />
+        <classShapeMoniker Id="f58179e4-d3c8-4fcd-a3eb-9f2af24c2155" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(13.125 : 1.56814697265625); (8.25 : 1.56814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 1.15907348632812); (6.25 : 1.15907348632812)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/NubeDataContext/canciones/canciones_cancionalbum" />
       <nodes>
-        <classShapeMoniker Id="a0b288eb-23f5-4e24-b3e1-8062ff5e4a41" />
-        <classShapeMoniker Id="2012125a-8043-4cdf-a0be-8a8a9e1e622c" />
+        <classShapeMoniker Id="8d6bf962-e463-4aa1-a3c9-357a16290516" />
+        <classShapeMoniker Id="f58179e4-d3c8-4fcd-a3eb-9f2af24c2155" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.20274983723958); (3.625 : 4.20274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.59699625651042); (3.5 : 4.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/NubeDataContext/generos/generos_album" />
       <nodes>
-        <classShapeMoniker Id="8f2ef765-96ff-473c-a04b-704c29b2bad5" />
-        <classShapeMoniker Id="0fd69b42-9675-42cd-ad64-373a088947e1" />
+        <classShapeMoniker Id="b43e1803-9884-4d08-88cd-8ecf78c4fbad" />
+        <classShapeMoniker Id="d0b72769-5d06-44d1-9f9e-6f8dd640577e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.375 : 7.04734537760417); (7.29166666666667 : 7.04734537760417 : JumpStart); (7.45833333333333 : 7.04734537760417 : JumpEnd); (9.75 : 7.04734537760417); (9.75 : 6.1362939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 8.94314697265625); (8.54166666666667 : 8.94314697265625 : JumpStart); (8.70833333333333 : 8.94314697265625 : JumpEnd); (9 : 8.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/NubeDataContext/artistabanda/artistabanda_integrabanda" />
       <nodes>
-        <classShapeMoniker Id="ce8fee3d-c48b-4a84-bd76-73cded0dd9e2" />
-        <classShapeMoniker Id="856f9161-7e08-4f2d-bfcb-afa2f50036a9" />
+        <classShapeMoniker Id="3b2b4614-7574-43b7-a745-8d596c382e0e" />
+        <classShapeMoniker Id="24d399fa-624f-480b-8088-c58d6f62be45" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(13.125 : 1.94597295898437); (11 : 1.94597295898437); (11 : 2.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 0.78125); (10.90625 : 0.78125); (10.90625 : 5.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/NubeDataContext/canciones/canciones_playlistcancion" />
       <nodes>
-        <classShapeMoniker Id="a0b288eb-23f5-4e24-b3e1-8062ff5e4a41" />
-        <classShapeMoniker Id="a4d17586-80b3-424a-b0cf-f77b4740eb3c" />
+        <classShapeMoniker Id="8d6bf962-e463-4aa1-a3c9-357a16290516" />
+        <classShapeMoniker Id="4dd58a74-5417-4811-b992-1fc9d14a5d74" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.75 : 8.44314697265625); (11.40625 : 8.44314697265625); (11.40625 : 4.0112939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 10.875); (8.625 : 10.5); (8.625 : 6.56814697265625); (9 : 6.56814697265625)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/NubeDataContext/playlist/playlist_playlistcancion" />
       <nodes>
-        <classShapeMoniker Id="2cf42076-43a8-4f87-8878-b268993a9291" />
-        <classShapeMoniker Id="a4d17586-80b3-424a-b0cf-f77b4740eb3c" />
+        <classShapeMoniker Id="2da169cd-40c5-40cb-b391-d4faf76c24b2" />
+        <classShapeMoniker Id="4dd58a74-5417-4811-b992-1fc9d14a5d74" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.375 : 4.875); (7.375 : 4.0112939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 6.93692851096755); (5.81607443490112 : 6.62085407606643 : JumpStart); (5.93392556509888 : 6.50300294586867 : JumpEnd); (6.0625 : 6.37442851096755); (6.0625 : 4.94597245898438); (6.25 : 4.94597245898438)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/NubeDataContext/usuario/usuario_albumfav" />
       <nodes>
-        <classShapeMoniker Id="3dd5004b-7601-4235-8047-24e7f66d163a" />
-        <classShapeMoniker Id="2ba80f46-0cd9-48e5-8290-3fe67d98cad0" />
+        <classShapeMoniker Id="38404ffe-1303-48c1-a535-b1ee231445c7" />
+        <classShapeMoniker Id="69526897-01ac-478e-b848-dfdea482d5cc" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.375 : 6.45359537760417); (7.375 : 7.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.5 : 8.45359537760417); (4.5 : 11.5681469726562); (6.25 : 11.5681469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/NubeDataContext/usuario/usuario_playlist" />
       <nodes>
-        <classShapeMoniker Id="3dd5004b-7601-4235-8047-24e7f66d163a" />
-        <classShapeMoniker Id="2cf42076-43a8-4f87-8878-b268993a9291" />
+        <classShapeMoniker Id="38404ffe-1303-48c1-a535-b1ee231445c7" />
+        <classShapeMoniker Id="2da169cd-40c5-40cb-b391-d4faf76c24b2" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
