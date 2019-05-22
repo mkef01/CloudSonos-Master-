@@ -1805,6 +1805,7 @@
     </Compile>
     <Compile Include="Models\apiAlbum.cs" />
     <Compile Include="Models\apiPlaylist.cs" />
+    <Compile Include="Models\IndexReproductor.cs" />
     <Compile Include="Models\lista.cs" />
     <Compile Include="Models\Entrada.cs" />
     <Compile Include="Models\Nube.designer.cs">

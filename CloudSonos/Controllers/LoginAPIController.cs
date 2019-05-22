@@ -145,5 +145,32 @@ namespace CloudSonos.Controllers
             }
             return detallePlaylist;
         }
+
+        [EnableCors("*", "*", "*")]
+        [HttpPost]
+        [Route("api/reproductor/index")]
+        public List<IndexReproductor> West()
+        {
+            List<IndexReproductor> indexReproductors = new List<IndexReproductor>();
+            var query = from alb in _context.album
+                        join art in _context.artistabanda on alb.ID_Album equals art.ID_Album
+                        select new
+                        {
+                            albumnombre = alb.nombre,
+                            albumimagen = alb.Imagen,
+                            artista = art.Nombre
+                        };
+            var detalles = query.ToList();
+            foreach(var detalleData in detalles)
+            {
+                indexReproductors.Add(new IndexReproductor()
+                {
+                    Album = detalleData.albumnombre,
+                    UrlCaratula = detalleData.albumimagen,
+                    NombreArtista = detalleData.artista
+                });
+            }
+            return indexReproductors;
+        }
     }
 }
