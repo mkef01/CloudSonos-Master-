@@ -10,5 +10,6 @@ namespace CloudSonos.Models
         public String NombreArtista { get; set; }
         public String Album { get; set; }
         public String UrlCaratula { get; set; }
+        public String Duracion { get; set; }
     }
 }

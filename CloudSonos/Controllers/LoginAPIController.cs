@@ -158,7 +158,8 @@ namespace CloudSonos.Controllers
                         {
                             albumnombre = alb.nombre,
                             albumimagen = alb.Imagen,
-                            artista = art.Nombre
+                            artista = art.Nombre,
+                            duracion = alb.Duracion
                         };
             var detalles = query.ToList();
             foreach(var detalleData in detalles)
@@ -167,7 +168,8 @@ namespace CloudSonos.Controllers
                 {
                     Album = detalleData.albumnombre,
                     UrlCaratula = detalleData.albumimagen,
-                    NombreArtista = detalleData.artista
+                    NombreArtista = detalleData.artista,
+                    Duracion = detalleData.duracion
                 });
             }
             return indexReproductors;
