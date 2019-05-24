@@ -174,5 +174,39 @@ namespace CloudSonos.Controllers
             }
             return indexReproductors;
         }
+
+        [EnableCors("*", "*", "*")]
+        [HttpGet]
+        [Route("api/reproductor/random")]
+        public List<Models.Random> locke()
+        {
+            List<Models.Random> lockerandom = new List<Models.Random>();
+            var query = from canci in _context.canciones
+                        select new
+                        {
+                            cantidad = canci.ID_Cancion
+                        };
+            int conteo = query.Count();
+            var seed = Environment.TickCount;
+            var random = new System.Random(seed);
+            var value = random.Next(0, conteo);
+            var query2 = from canci in _context.canciones
+                         where canci.ID_Cancion == value
+                         select new
+                         {
+                             link = canci.URL,
+                             nom = canci.Nombre,
+                         };
+            var detalle = query2.ToList();
+            foreach (var detalleData in detalle)
+            {
+                lockerandom.Add(new Models.Random
+                {
+                    nombre = detalleData.nom,
+                    URl = detalleData.link
+                });
+            }
+            return lockerandom;
+        }
     }
 }
