@@ -154,6 +154,7 @@ namespace CloudSonos.Controllers
             List<IndexReproductor> indexReproductors = new List<IndexReproductor>();
             var query = from alb in _context.album
                         join art in _context.artistabanda on alb.ID_Album equals art.ID_Album
+                        orderby alb.nombre ascending 
                         select new
                         {
                             albumnombre = alb.nombre,
