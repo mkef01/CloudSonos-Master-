@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using System.Web.UI.WebControls;
 using CloudSonos.Models;
 
 namespace CloudSonos.Controllers
@@ -208,6 +209,22 @@ namespace CloudSonos.Controllers
                 });
             }
             return lockerandom;
+        }
+
+        [EnableCors("*", "*", "*")]
+        [HttpGet]
+        [Route("api/reproductor/bookmark")]
+        public Boolean simonsimon(String album)
+        {
+            if (album.Equals("Some girls"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
     }
 }
