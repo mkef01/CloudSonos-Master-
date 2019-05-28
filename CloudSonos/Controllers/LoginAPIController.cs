@@ -214,7 +214,7 @@ namespace CloudSonos.Controllers
         [EnableCors("*", "*", "*")]
         [HttpGet]
         [Route("api/reproductor/bookmark")]
-        public Boolean simonsimon(String album)
+        public Boolean simonsimon(string album,string usuario)
         {
             if (album.Equals("Some girls"))
             {
@@ -225,6 +225,58 @@ namespace CloudSonos.Controllers
                 return false;
             }
 
+        }
+
+        [EnableCors("*", "*", "*")]
+        [HttpPost]
+        [Route("api/reproductor/artistas")]
+        public List<Models.Artistas> lupita()
+        {
+            List<Models.Artistas> detaList = new List<Artistas>();
+            var query = from artis in _context.artistabanda
+                join integrabanda in _context.integrabanda on artis.ID_Artista equals integrabanda.ID_Artista
+                group new {artis} by new { artis.Nombre, artis.imagen, artis.ID_Artista } into grop
+                select new
+                {
+                    nombre = grop.Key.Nombre,
+                    banner = grop.Key.imagen,
+                    idbanda = grop.Key.ID_Artista
+                };
+            var lista = query.ToList();
+            foreach (var detalleLista in lista)
+            {
+                string integrantes = "";
+                int iteracion = 0;
+                var query2 = from integra in _context.integrabanda
+                    where integra.ID_Artista == detalleLista.idbanda
+                    select new
+                    {
+                        personal = integra.Persona
+                    };
+                var detalle = query2.ToList();
+                int final = query2.Count();
+                foreach (var detalle2 in detalle)
+                {
+                    if (iteracion < final-1)
+                    {
+                        integrantes = integrantes + detalle2.personal + ", ";
+                    }
+                    else
+                    {
+                        integrantes = integrantes + detalle2.personal;
+                    }
+                    iteracion++;
+                }
+                detaList.Add(new Artistas()
+                {
+                    NombreArtista = detalleLista.nombre,
+                    UrlArtista = detalleLista.banner,
+                    IntegrantesBanda = integrantes
+                    
+                });
+            }
+
+            return detaList;
         }
     }
 }
