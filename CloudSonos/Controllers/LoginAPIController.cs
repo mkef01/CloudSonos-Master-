@@ -212,11 +212,11 @@ namespace CloudSonos.Controllers
         }
 
         [EnableCors("*", "*", "*")]
-        [HttpGet]
+        [HttpPost]
         [Route("api/reproductor/bookmark")]
-        public Boolean simonsimon(string album,string usuario)
+        public Boolean simonsimon([FromBody] Bookmark book)
         {
-            if (album.Equals("Some girls"))
+            if (book.album.Equals("Some girls"))
             {
                 return true;
             }
