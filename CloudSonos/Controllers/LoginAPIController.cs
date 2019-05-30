@@ -217,15 +217,63 @@ namespace CloudSonos.Controllers
         [Route("api/reproductor/bookmark")]
         public Boolean simonsimon([FromBody] Bookmark book)
         {
-            if (book.album.Equals("Some girls"))
+            var query = from usuario in _context.usuario
+                join albumfav in _context.albumfav on usuario.ID_Usuario equals albumfav.ID_Usuario
+                join album in _context.album on albumfav.ID_Album equals album.ID_Album
+                where usuario.Usuario1.Equals(book.usuario) && album.nombre.Equals(book.album) 
+                select new
+                {
+                    n1 = usuario.ID_Usuario,
+                    n2 = album.ID_Album
+                };
+            int conteo = query.Count();
+            if (conteo > 0)
             {
                 return true;
-            }
-            else
+
+            }if (conteo == 0)
             {
-                return false;
+                var query2 = from usu in _context.usuario
+                    where usu.Usuario1.Equals(book.usuario)
+                    select new
+                    {
+                        usu.ID_Usuario
+                    };
+                var query3 = from album in _context.album
+                    where album.nombre.Equals(book.album)
+                    select new
+                    {
+                        album.ID_Album
+                    };
+                albumfav favoritos = new albumfav();
+                var lista = query2.ToList();
+                var lista2 = query3.ToList();
+                foreach (var detalleLista in lista)
+                {
+                    favoritos.ID_Usuario = detalleLista.ID_Usuario;
+                }
+
+                foreach (var detalleLista in lista2)
+                {
+                    favoritos.ID_Album = detalleLista.ID_Album;
+                }
+
+                using (NubeDataContext objDataContext = new NubeDataContext())
+                {
+                    try
+                    {
+                        objDataContext.albumfav.InsertOnSubmit(favoritos);
+                        objDataContext.SubmitChanges();
+                    }
+                    catch (Exception e)
+                    {
+                        return false;
+                    }
+                }
+
             }
 
+            return false;
         }
 
         [EnableCors("*", "*", "*")]
