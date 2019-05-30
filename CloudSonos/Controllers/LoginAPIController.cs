@@ -421,7 +421,8 @@ namespace CloudSonos.Controllers
                 {
                     caratula = album.Imagen,
                     grupo = artistabanda.Nombre,
-                    descripcion = album.Descripcion
+                    descripcion = album.Descripcion,
+                    album = album.nombre
                 };
             var lista2 = query2.ToList();
             foreach (var listaDetalle in lista2)
@@ -430,7 +431,8 @@ namespace CloudSonos.Controllers
                 {
                     banda = listaDetalle.grupo,
                     banner = listaDetalle.caratula,
-                    descripcion = listaDetalle.descripcion
+                    descripcion = listaDetalle.descripcion,
+                    album = listaDetalle.album
                 });
             }
 

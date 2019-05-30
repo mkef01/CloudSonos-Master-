@@ -10,5 +10,6 @@ namespace CloudSonos.Models
         public string banner { get; set; }
         public string banda { get; set; }
         public string descripcion { get; set; }
+        public string album { get; set; }
     }
 }
