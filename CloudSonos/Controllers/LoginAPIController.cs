@@ -278,5 +278,71 @@ namespace CloudSonos.Controllers
 
             return detaList;
         }
+
+        [EnableCors("*", "*", "*")]
+        [HttpPost]
+        [Route("api/reproductor/nuevo")]
+        public int aloha([FromBody] NuevoUsuario nuevoUsuario)
+        {
+            try
+            {
+                string pass1 = nuevoUsuario.Password1;
+                string pass2 = nuevoUsuario.Password2;
+                if (pass2.Equals(pass1))
+                {
+                    var query = from usu in _context.usuario
+                        select new
+                        {
+                            co = usu.Correo,
+                            nombre = usu.Usuario1
+                        };
+                    var lista = query.ToList();
+                    foreach (var listadetalle in lista)
+                    {
+                        if (listadetalle.nombre.Equals(nuevoUsuario.Usuario))
+                        {
+                            return 40;
+                        }
+
+                        if (listadetalle.co.Equals(nuevoUsuario.Coreo))
+                        {
+                            return 50;
+                        }
+                    }
+
+                }
+                else
+                {
+                    return 60;
+                }
+            }
+            catch (Exception e)
+            {
+                return 100;
+            }
+
+            return 0;
+        }
+
+        [EnableCors("*", "*", "*")]
+        [HttpPost]
+        [Route("api/reproductor/insertar")]
+        public int NuevoUsuario([FromBody] usuario nuevoUsuario)
+        {
+            using (NubeDataContext objDataContext = new NubeDataContext())
+            {
+                try
+                {
+                    objDataContext.usuario.InsertOnSubmit(nuevoUsuario);
+                    objDataContext.SubmitChanges();
+                }
+                catch (Exception e)
+                {
+                    return 0;
+                }
+            }
+
+            return 5;
+        }
     }
 }
