@@ -393,5 +393,48 @@ namespace CloudSonos.Controllers
 
             return 5;
         }
+
+        [EnableCors("*", "*", "*")]
+        [HttpPost]
+        [Route("api/reproductor/eventos")]
+        public List<EnvioFavoritos> mambo([FromBody] PreferenciasVer ver)
+        {
+            List<EnvioFavoritos> favoritos = new List<EnvioFavoritos>();
+            var query = from usuario in _context.usuario
+                where usuario.Usuario1.Equals(ver.nombre)
+                select new
+                {
+                    id = usuario.ID_Usuario
+                };
+            var lista = query.ToList();
+            int idusuario = -1;
+            foreach (var variable in lista)
+            {
+                idusuario = variable.id;
+            }
+
+            var query2 = from albumfav in _context.albumfav
+                join album in _context.album on albumfav.ID_Album equals album.ID_Album
+                join artistabanda in _context.artistabanda on album.ID_Album equals artistabanda.ID_Album 
+                where albumfav.ID_Usuario == idusuario
+                select new
+                {
+                    caratula = album.Imagen,
+                    grupo = artistabanda.Nombre,
+                    descripcion = album.Descripcion
+                };
+            var lista2 = query2.ToList();
+            foreach (var listaDetalle in lista2)
+            {
+                favoritos.Add(new EnvioFavoritos()
+                {
+                    banda = listaDetalle.grupo,
+                    banner = listaDetalle.caratula,
+                    descripcion = listaDetalle.descripcion
+                });
+            }
+
+            return favoritos;
+        }
     }
 }
