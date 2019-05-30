@@ -24,21 +24,22 @@ namespace CloudSonos.Controllers
 		[HttpPost]
 	    [Route("api/login/acceso")]
 	    public bool Login([FromBody] Entrada inEntrada)
-	    {
-		    int a = 0;
-		    if (inEntrada.Usuario.Equals("mkef01"))
-		    {
-			    a++;
-		    }
-		    if (inEntrada.Contraseña.Equals("qazxsw123"))
-		    {
-			    a++;
-		    }
-		    if (a == 2)
-		    {
-			    return true;
-		    }
-		    return false;
+        {
+            var query = from usuario in _context.usuario
+                        where usuario.Usuario1.Equals(inEntrada.Usuario) && usuario.Contraseña.Equals(inEntrada.Contraseña)
+                        select new
+                        {
+                            idUsuario = usuario.ID_Usuario
+                        };
+            int total = query.Count();
+            if (total == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 	    }
 
         [EnableCors("*", "*", "*")]
