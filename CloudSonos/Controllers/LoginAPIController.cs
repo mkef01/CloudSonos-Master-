@@ -20,10 +20,10 @@ namespace CloudSonos.Controllers
             _context = new NubeDataContext();
         }
 
-		[EnableCors("*","*","*")]
-		[HttpPost]
-	    [Route("api/login/acceso")]
-	    public bool Login([FromBody] Entrada inEntrada)
+        [EnableCors("*", "*", "*")]
+        [HttpPost]
+        [Route("api/login/acceso")]
+        public bool Login([FromBody] Entrada inEntrada)
         {
             var query = from usuario in _context.usuario
                         where usuario.Usuario1.Equals(inEntrada.Usuario) && usuario.Contraseña.Equals(inEntrada.Contraseña)
@@ -40,7 +40,7 @@ namespace CloudSonos.Controllers
             {
                 return false;
             }
-	    }
+        }
 
         [EnableCors("*", "*", "*")]
         [HttpPost]
@@ -53,7 +53,8 @@ namespace CloudSonos.Controllers
             //a.estado = true;
             //return a;
             Entrada[] array = new Entrada[5];
-            for (int i=0; i<5; i++){
+            for (int i = 0; i < 5; i++)
+            {
                 Entrada obj1 = new Entrada();
                 obj1.Usuario = "Elmer" + Convert.ToString(i);
                 obj1.Contraseña = "Aloha" + Convert.ToString(i);
@@ -66,7 +67,7 @@ namespace CloudSonos.Controllers
         [EnableCors("*", "*", "*")]
         [HttpGet]
         [Route("api/login/canciones")]
-        public List<lista> Origen(string playlist,int ID)
+        public List<lista> Origen(string playlist, int ID)
         {
             List<lista> datos = new List<lista>();
             lista f = new lista();
@@ -156,7 +157,7 @@ namespace CloudSonos.Controllers
             List<IndexReproductor> indexReproductors = new List<IndexReproductor>();
             var query = from alb in _context.album
                         join art in _context.artistabanda on alb.ID_Album equals art.ID_Album
-                        orderby alb.nombre ascending 
+                        orderby alb.nombre ascending
                         select new
                         {
                             albumnombre = alb.nombre,
@@ -165,7 +166,7 @@ namespace CloudSonos.Controllers
                             duracion = alb.Duracion
                         };
             var detalles = query.ToList();
-            foreach(var detalleData in detalles)
+            foreach (var detalleData in detalles)
             {
                 indexReproductors.Add(new IndexReproductor()
                 {
@@ -218,33 +219,34 @@ namespace CloudSonos.Controllers
         public Boolean simonsimon([FromBody] Bookmark book)
         {
             var query = from usuario in _context.usuario
-                join albumfav in _context.albumfav on usuario.ID_Usuario equals albumfav.ID_Usuario
-                join album in _context.album on albumfav.ID_Album equals album.ID_Album
-                where usuario.Usuario1.Equals(book.usuario) && album.nombre.Equals(book.album) 
-                select new
-                {
-                    n1 = usuario.ID_Usuario,
-                    n2 = album.ID_Album
-                };
+                        join albumfav in _context.albumfav on usuario.ID_Usuario equals albumfav.ID_Usuario
+                        join album in _context.album on albumfav.ID_Album equals album.ID_Album
+                        where usuario.Usuario1.Equals(book.usuario) && album.nombre.Equals(book.album)
+                        select new
+                        {
+                            n1 = usuario.ID_Usuario,
+                            n2 = album.ID_Album
+                        };
             int conteo = query.Count();
             if (conteo > 0)
             {
                 return true;
 
-            }if (conteo == 0)
+            }
+            if (conteo == 0)
             {
                 var query2 = from usu in _context.usuario
-                    where usu.Usuario1.Equals(book.usuario)
-                    select new
-                    {
-                        usu.ID_Usuario
-                    };
+                             where usu.Usuario1.Equals(book.usuario)
+                             select new
+                             {
+                                 usu.ID_Usuario
+                             };
                 var query3 = from album in _context.album
-                    where album.nombre.Equals(book.album)
-                    select new
-                    {
-                        album.ID_Album
-                    };
+                             where album.nombre.Equals(book.album)
+                             select new
+                             {
+                                 album.ID_Album
+                             };
                 albumfav favoritos = new albumfav();
                 var lista = query2.ToList();
                 var lista2 = query3.ToList();
@@ -283,30 +285,30 @@ namespace CloudSonos.Controllers
         {
             List<Models.Artistas> detaList = new List<Artistas>();
             var query = from artis in _context.artistabanda
-                join integrabanda in _context.integrabanda on artis.ID_Artista equals integrabanda.ID_Artista
-                group new {artis} by new { artis.Nombre, artis.imagen, artis.ID_Artista } into grop
-                select new
-                {
-                    nombre = grop.Key.Nombre,
-                    banner = grop.Key.imagen,
-                    idbanda = grop.Key.ID_Artista
-                };
+                        join integrabanda in _context.integrabanda on artis.ID_Artista equals integrabanda.ID_Artista
+                        group new { artis } by new { artis.Nombre, artis.imagen, artis.ID_Artista } into grop
+                        select new
+                        {
+                            nombre = grop.Key.Nombre,
+                            banner = grop.Key.imagen,
+                            idbanda = grop.Key.ID_Artista
+                        };
             var lista = query.ToList();
             foreach (var detalleLista in lista)
             {
                 string integrantes = "";
                 int iteracion = 0;
                 var query2 = from integra in _context.integrabanda
-                    where integra.ID_Artista == detalleLista.idbanda
-                    select new
-                    {
-                        personal = integra.Persona
-                    };
+                             where integra.ID_Artista == detalleLista.idbanda
+                             select new
+                             {
+                                 personal = integra.Persona
+                             };
                 var detalle = query2.ToList();
                 int final = query2.Count();
                 foreach (var detalle2 in detalle)
                 {
-                    if (iteracion < final-1)
+                    if (iteracion < final - 1)
                     {
                         integrantes = integrantes + detalle2.personal + ", ";
                     }
@@ -321,7 +323,7 @@ namespace CloudSonos.Controllers
                     NombreArtista = detalleLista.nombre,
                     UrlArtista = detalleLista.banner,
                     IntegrantesBanda = integrantes
-                    
+
                 });
             }
 
@@ -340,11 +342,11 @@ namespace CloudSonos.Controllers
                 if (pass2.Equals(pass1))
                 {
                     var query = from usu in _context.usuario
-                        select new
-                        {
-                            co = usu.Correo,
-                            nombre = usu.Usuario1
-                        };
+                                select new
+                                {
+                                    co = usu.Correo,
+                                    nombre = usu.Usuario1
+                                };
                     var lista = query.ToList();
                     foreach (var listadetalle in lista)
                     {
@@ -401,11 +403,11 @@ namespace CloudSonos.Controllers
         {
             List<EnvioFavoritos> favoritos = new List<EnvioFavoritos>();
             var query = from usuario in _context.usuario
-                where usuario.Usuario1.Equals(ver.nombre)
-                select new
-                {
-                    id = usuario.ID_Usuario
-                };
+                        where usuario.Usuario1.Equals(ver.nombre)
+                        select new
+                        {
+                            id = usuario.ID_Usuario
+                        };
             var lista = query.ToList();
             int idusuario = -1;
             foreach (var variable in lista)
@@ -414,16 +416,16 @@ namespace CloudSonos.Controllers
             }
 
             var query2 = from albumfav in _context.albumfav
-                join album in _context.album on albumfav.ID_Album equals album.ID_Album
-                join artistabanda in _context.artistabanda on album.ID_Album equals artistabanda.ID_Album 
-                where albumfav.ID_Usuario == idusuario
-                select new
-                {
-                    caratula = album.Imagen,
-                    grupo = artistabanda.Nombre,
-                    descripcion = album.Descripcion,
-                    album = album.nombre
-                };
+                         join album in _context.album on albumfav.ID_Album equals album.ID_Album
+                         join artistabanda in _context.artistabanda on album.ID_Album equals artistabanda.ID_Album
+                         where albumfav.ID_Usuario == idusuario
+                         select new
+                         {
+                             caratula = album.Imagen,
+                             grupo = artistabanda.Nombre,
+                             descripcion = album.Descripcion,
+                             album = album.nombre
+                         };
             var lista2 = query2.ToList();
             foreach (var listaDetalle in lista2)
             {
@@ -437,6 +439,30 @@ namespace CloudSonos.Controllers
             }
 
             return favoritos;
+        }
+
+        [EnableCors("*", "*", "*")]
+        [HttpPost]
+        [Route("api/reproductor/correo")]
+        public bool EnviarCorreo([FromBody] ParamCorreo ver)
+        {
+            string destinatario = ver.destinatario;
+            string usuario = ver.usuario;
+            string mensaje = ver.mensaje;
+
+            CCorreocs correocs = new CCorreocs(destinatario, usuario, mensaje);
+            return true;
+        }
+
+        [EnableCors("*", "*", "*")]
+        [HttpPost]
+        [Route("api/reproductor/confirmacion")]
+        public bool ConfirmacionCorreo([FromBody] ParamCorreo ver)
+        {
+            string destinatario = ver.destinatario;
+
+            CCorreocs correocs = new CCorreocs(destinatario);
+            return true;
         }
     }
 }

@@ -1787,6 +1787,8 @@
     <None Include="Models\Nube.dbml.layout">
       <DependentUpon>Nube.dbml</DependentUpon>
     </None>
+    <None Include="Properties\PublishProfiles\CloudSonos - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\CloudSonos - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1807,6 +1809,7 @@
     <Compile Include="Models\apiPlaylist.cs" />
     <Compile Include="Models\Artistas.cs" />
     <Compile Include="Models\Bookmark.cs" />
+    <Compile Include="Models\CCorreocs.cs" />
     <Compile Include="Models\EnvioFavoritos.cs" />
     <Compile Include="Models\IndexReproductor.cs" />
     <Compile Include="Models\InsertarUsuario.cs" />
@@ -1818,6 +1821,7 @@
       <DependentUpon>Nube.dbml</DependentUpon>
     </Compile>
     <Compile Include="Models\NuevoUsuario.cs" />
+    <Compile Include="Models\ParamCorreo.cs" />
     <Compile Include="Models\Pedido1.cs" />
     <Compile Include="Models\PreferenciasVer.cs" />
     <Compile Include="Models\Random.cs" />
